@@ -10,7 +10,7 @@ interface GetPhotos {
   orderBy?: 'latest' | 'oldest' | 'popular'
 }
 
-export default class Unsplash {
+export default class UnsplashApi {
   // 图片列表
   /* eslint-disable @typescript-eslint/camelcase */
   static getPhotos (params: GetPhotos) {

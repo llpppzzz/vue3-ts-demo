@@ -16,7 +16,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import { onMounted } from 'vue'
-import Unsplash from 'api/unsplash'
+import UnsplashApi from 'api/unsplash'
 
 export default {
   name: 'App',
@@ -30,7 +30,7 @@ export default {
     async function getPhotos () {
       console.log('get!')
       try {
-        const res = await Unsplash.getPhotos({
+        const res = await UnsplashApi.getPhotos({
           page: 1,
           pageSize: 10
         })

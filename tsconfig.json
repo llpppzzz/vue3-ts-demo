@@ -20,6 +20,9 @@
       ],
       "api/*": [
         "src/api/*"
+      ],
+      "views/*": [
+        "src/views/*"
       ]
     },
     "lib": [
