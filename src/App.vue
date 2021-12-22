@@ -1,46 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <p>
-        If Element Plus is successfully added to this project, you'll see an
-        <code v-text="'<el-button>'"></code>
-        below
-      </p>
-      <el-button type="primary" @click="getPhotos">el-button</el-button>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import { onMounted } from 'vue'
-import UnsplashApi from 'api/unsplash'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
   },
-  setup () {
+  setup (props, context) {
     onMounted(async () => {
       console.log('mounted!')
     })
-    async function getPhotos () {
-      console.log('get!')
-      try {
-        const res = await UnsplashApi.getPhotos({
-          page: 1,
-          pageSize: 10
-        })
-        console.log(res)
-      } catch (e) {
-        console.log(e)
-      }
+    function openBill () {
+      console.log(context)
     }
     return {
-      getPhotos
+      openBill
     }
   }
 }
