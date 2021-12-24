@@ -1,11 +1,12 @@
 <template>
-<div class="charts">bill</div>
+<div class="charts">
+  <e-charts options="options" />
+</div>
 </template>
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue';
-import data2021 from '../../static/2021.json'
-import {getSumByCategories} from '@/utils/bill'
+import data2021 from '../../static/data2021.json'
 
 export default defineComponent({
   name: 'Charts',
@@ -13,8 +14,7 @@ export default defineComponent({
   },
   setup (props, context) {
     onMounted(async () => {
-      const eating = getSumByCategories(data2021, ['餐饮'])
-      console.log(eating)
+      console.log(data2021)
     })
     return {
     }
